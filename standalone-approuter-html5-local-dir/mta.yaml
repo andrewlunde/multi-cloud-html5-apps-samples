@@ -15,8 +15,8 @@ modules:
     parameters:
         #host: ${org}-${space}-hello-app
         #domain: cfapps.us10.hana.ondemand.com
-        #routes:
-        #  - route: hello-app-${space}-${app-name}.${default-domain}
+        routes:
+          - route: hello-app-${space}-${app-name}.${default-domain}
         disk-quota: 256M
         memory: 256M
     requires:
