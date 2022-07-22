@@ -17,8 +17,13 @@ This is an example of an HTML5 app that you maintain on a standalone application
     ```
 3. Deploy the application router:
     ```
-    cf push approuter --random-route
+    mbt build -p=cf -t=mta_archives --mtar=standalone-approuter-html5-local-dir_1.0.0.mtar
+    cf deploy mta_archives/standalone-approuter-html5-local-dir_1.0.0.mtar -f
     ```
+3. Clean up:
+    ```
+    cf undeploy standalone-approuter-html5-local-dir -f --delete-services
+    ```        
 
 If the deployment has been successful, you find the URL of the application router in the console output. or you can print it on Unix-based systems with `cf app approuter | awk '/^routes/ { print "https://"$2"/" }'`. It has the following structure: 
 
